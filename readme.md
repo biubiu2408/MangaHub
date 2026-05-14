@@ -81,7 +81,7 @@ This will populate the database with mangas & account:
 
 
 # **How to run CLI - FOR TESTING PURPOSE ONLY, FOR ACTUAL CLIENT SIDE WITH FULL SERVICES, PLEASE CHECKOUT OUR DESKTOP APP**
-# **Desktop app: [Mangahub-client](https://github.com/hathucanh13/mangahub-client)**
+# **Desktop app: [Mangahub-client](https://github.com/biubiu2408/MangaHub-Client)**
 1. Run this in your terminal 
 ```bash
 go build ./mangahub 
