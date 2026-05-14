@@ -1,0 +1,63 @@
+syntax = "proto3";
+
+package manga.v1;
+
+option go_package = "../internal/grpc/manga;pb";
+
+service MangaService {
+  // UC-014
+  rpc GetManga(GetMangaRequest) returns (GetMangaResponse);
+
+  // UC-015
+  rpc Search(SearchMangaRequest) returns (SearchMangaResponse);
+
+  // UC-016
+  rpc UpdateProgress(UpdateProgressRequest) returns (UpdateProgressResponse);
+}
+
+/* ========== UC-014 ========== */
+
+message GetMangaRequest {
+  string manga_id = 1;
+}
+
+message GetMangaResponse {
+  Manga manga = 1;
+}
+
+/* ========== UC-015 ========== */
+
+message SearchMangaRequest {
+  string keyword = 1;
+  int32 page = 2;
+  int32 page_size = 3;
+}
+
+message SearchMangaResponse {
+  repeated Manga results = 1;
+  int64 total = 2;
+}
+
+/* ========== UC-016 ========== */
+
+message UpdateProgressRequest {
+  int64 user_id = 1;
+  string manga_id = 2;
+  int64 chapter = 3;
+}
+
+message UpdateProgressResponse {
+  bool success = 1;
+}
+
+/* ========== Shared ========== */
+
+message Manga {
+  string id = 1;
+  string title = 2;
+  string author = 3;
+  string description = 4;
+  string artist = 5;
+  int64 chapter_count = 6;
+  int64 published_year = 7;
+}
