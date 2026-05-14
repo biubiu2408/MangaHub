@@ -14,7 +14,7 @@
 Open your terminal and run:
 
 ```bash
-git clone https://github.com/baochammm/mangahub.git
+git clone https://github.com/biubiu2408/MangaHub
 cd mangahub
 ```
 
